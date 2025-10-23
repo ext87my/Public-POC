@@ -9,16 +9,16 @@ const InfoModal = ({ isOpen, onClose, title, children }) => {
 
     return (
         React.createElement('div', { 
-            className: "fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in",
+            className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in",
             onClick: onClose
         },
             React.createElement('div', { 
-                className: "bg-slate-800 rounded-lg shadow-2xl max-w-3xl w-full border border-slate-700 max-h-[90vh] flex flex-col",
+                className: "bg-white rounded-lg shadow-2xl max-w-3xl w-full border border-gray-200 max-h-[90vh] flex flex-col",
                 onClick: (e) => e.stopPropagation()
             },
-                React.createElement('div', { className: "flex justify-between items-center p-4 border-b border-slate-700 sticky top-0 bg-slate-800" },
-                    React.createElement('h2', { className: "text-2xl font-bold text-cyan-400" }, title),
-                    React.createElement('button', { onClick: onClose, className: "text-slate-400 hover:text-white text-3xl font-light" }, "×")
+                React.createElement('div', { className: "flex justify-between items-center p-4 border-b border-gray-200 sticky top-0 bg-white" },
+                    React.createElement('h2', { className: "text-2xl font-bold text-cyan-600" }, title),
+                    React.createElement('button', { onClick: onClose, className: "text-gray-500 hover:text-gray-800 text-3xl font-light" }, "×")
                 ),
                 React.createElement('div', { className: "p-6 overflow-y-auto" },
                     children
@@ -46,8 +46,8 @@ const VenueContent = () => {
     return (
         React.createElement('div', { className: "space-y-8" },
             React.createElement('div', null,
-                React.createElement('h2', { className: "text-2xl font-bold text-cyan-400 mb-4" }, "Location: Merdeka 118"),
-                React.createElement('div', { className: "aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border-2 border-slate-700" },
+                React.createElement('h2', { className: "text-2xl font-bold text-cyan-600 mb-4" }, "Location: Merdeka 118"),
+                React.createElement('div', { className: "aspect-w-16 aspect-h-9 rounded-lg overflow-hidden border-2 border-gray-200" },
                     React.createElement('iframe', {
                         src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.821327178303!2d101.6960113153443!3d3.141511997711466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49c417277869%3A0x1d3f66826629a58c!2sMerdeka%20118!5e0!3m2!1sen!2smy!4v1678886478910!5m2!1sen!2smy",
                         width: "100%",
@@ -60,7 +60,7 @@ const VenueContent = () => {
                 )
             ),
             React.createElement('div', null,
-                React.createElement('h2', { className: "text-2xl font-bold text-cyan-400 mb-4" }, "Public Transport Guide"),
+                React.createElement('h2', { className: "text-2xl font-bold text-cyan-600 mb-4" }, "Public Transport Guide"),
                 React.createElement('div', { className: "flex justify-center items-center min-h-[200px]" },
                     isLoading ? React.createElement(LoadingSpinner, { text: "Generating transport guide..." }) : React.createElement('img', { src: directionsImageUrl, alt: "Public transport directions", className: "rounded-lg max-w-full h-auto" })
                 )
@@ -89,10 +89,10 @@ const AgendaContent = () => {
         React.createElement('ul', { className: "space-y-6" },
             agenda.map((item, index) => (
                 React.createElement('li', { key: index, className: "flex flex-col md:flex-row gap-4 border-l-4 border-cyan-500 pl-4 py-2" },
-                    React.createElement('div', { className: "md:w-1/4" }, React.createElement('p', { className: "font-bold text-lg text-cyan-400" }, item.time)),
+                    React.createElement('div', { className: "md:w-1/4" }, React.createElement('p', { className: "font-bold text-lg text-cyan-600" }, item.time)),
                     React.createElement('div', { className: "md:w-3/4" },
-                        React.createElement('h3', { className: "font-semibold text-xl text-slate-100" }, item.activity),
-                        React.createElement('p', { className: "text-slate-300 mt-1" }, item.description)
+                        React.createElement('h3', { className: "font-semibold text-xl text-slate-800" }, item.activity),
+                        React.createElement('p', { className: "text-slate-600 mt-1" }, item.description)
                     )
                 )
             ))
@@ -118,13 +118,13 @@ const DressCodeContent = () => {
 
     return (
         React.createElement('div', { className: "text-center" },
-            React.createElement('p', { className: "text-xl text-slate-300 mb-2" }, "Theme: ", React.createElement('span', { className: "font-bold text-cyan-400" }, "Fun Party Time!")),
-            React.createElement('p', { className: "text-lg text-slate-400 mb-8" }, "Smart casual with a festive twist. Be creative and comfortable!"),
+            React.createElement('p', { className: "text-xl text-slate-600 mb-2" }, "Theme: ", React.createElement('span', { className: "font-bold text-cyan-600" }, "Fun Party Time!")),
+            React.createElement('p', { className: "text-lg text-slate-500 mb-8" }, "Smart casual with a festive twist. Be creative and comfortable!"),
             React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" },
                 suggestions.map((suggestion, index) => (
-                    React.createElement('div', { key: index, className: "bg-slate-700/50 p-6 rounded-lg" },
-                        React.createElement('h3', { className: "text-2xl font-bold text-cyan-400 mb-4" }, suggestion.category),
-                        React.createElement('ul', { className: "space-y-2 text-left list-disc list-inside text-slate-300" },
+                    React.createElement('div', { key: index, className: "bg-gray-50 border border-gray-200 p-6 rounded-lg" },
+                        React.createElement('h3', { className: "text-2xl font-bold text-cyan-600 mb-4" }, suggestion.category),
+                        React.createElement('ul', { className: "space-y-2 text-left list-disc list-inside text-slate-600" },
                             suggestion.items.map((item, i) => React.createElement('li', { key: i }, item))
                         )
                     )
@@ -138,9 +138,9 @@ const EmergencyContent = () => (
     React.createElement('div', { className: "text-center" },
         React.createElement('div', { className: "flex flex-col items-center justify-center" },
             React.createElement('div', { className: "text-6xl mb-4" }, "🚨"),
-            React.createElement('h2', { className: "text-2xl font-bold text-slate-300 mb-2" }, "In case of emergency, please contact:"),
-            React.createElement('p', { className: "text-5xl font-extrabold text-cyan-400 tracking-widest" }, "999"),
-            React.createElement('p', { className: "text-slate-400 mt-4" }, "Stay calm and follow the instructions of the event staff.")
+            React.createElement('h2', { className: "text-2xl font-bold text-slate-700 mb-2" }, "In case of emergency, please contact:"),
+            React.createElement('p', { className: "text-5xl font-extrabold text-cyan-600 tracking-widest" }, "999"),
+            React.createElement('p', { className: "text-slate-500 mt-4" }, "Stay calm and follow the instructions of the event staff.")
         )
     )
 );
@@ -175,10 +175,10 @@ const HomePage = () => {
   };
 
   return (
-    React.createElement('div', { className: "min-h-screen bg-slate-900" },
+    React.createElement('div', { className: "min-h-screen bg-white" },
       React.createElement('header', { className: "relative h-96 flex items-center justify-center overflow-hidden" },
         isLoading ? (
-          React.createElement('div', { className: "w-full h-full flex items-center justify-center bg-slate-800" },
+          React.createElement('div', { className: "w-full h-full flex items-center justify-center bg-gray-100" },
             React.createElement(LoadingSpinner, { text: "Creating a fun banner..." })
           )
         ) : (
@@ -207,12 +207,12 @@ const HomePage = () => {
             React.createElement('button', {
               key: item.modalId,
               onClick: () => setActiveModal(item.modalId),
-              className: "bg-slate-800 p-6 rounded-xl shadow-lg hover:bg-slate-700 hover:shadow-slate-600/30 transform hover:-translate-y-1 transition-all duration-300 text-left"
+              className: "bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-lg hover:bg-gray-100 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-left"
             },
               React.createElement('div', { className: "flex items-center" },
                 React.createElement('span', { className: "text-4xl mr-4" }, item.icon),
                 React.createElement('div', null,
-                  React.createElement('h2', { className: "text-xl font-bold text-slate-100" }, item.text)
+                  React.createElement('h2', { className: "text-xl font-bold text-slate-800" }, item.text)
                 )
               )
             )
